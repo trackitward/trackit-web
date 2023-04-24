@@ -1,0 +1,48 @@
+/* body or .classname */
+
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    background-color: rgb(20,29,38);
+}
+
+.logo{
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+table {
+    border-style: hidden;
+    width: 1000px;
+    height: 500px;
+}
+
+th {
+    border-style: hidden;
+    font-size: 25px;
+    color: white;
+}
+
+tr {
+    color: #34bab0;
+}
+
+td {
+    border-radius: 5px;
+    border-color: #34bab0;
+    height: 42px;
+    color: white;
+    font-size: 18px;
+}
+
+.titles {
+    border-style: hidden;
+    color: black;
+}
