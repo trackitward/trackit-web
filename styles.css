@@ -4,8 +4,8 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-body {
-    background-color: rgb(20,29,38);
+#body {
+    background-color: #141d26;
 }
 
 .logo{

@@ -30,3 +30,11 @@ for (var i=0; i<number_of_courses; i++){ // run a loop for each course the user 
     }
     table.appendChild(row) // append the row to the table
 }
+
+function switchMode(){
+    let body = document.getElementById('body')
+
+    if (body.style.backgroundColor == "#141d26") {
+        body.style.backgroundColor = "#fff"
+    }
+}
