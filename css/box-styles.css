@@ -1,53 +1,49 @@
-*{
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
-
-body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+body {
+    display: grid;
+    place-items: center;
     min-height: 100vh;
-    background: #141d26;
+    background-color: #141d26;
 }
 
-.box{
-    width: 470px;
-    background: #141d26;
-    border-radius: 5px;
-    padding: 25px 25px 30px;
-    box-shadow: 8px 8px 10px rgba(0,0,0,0.06);
+.container {
+    display: flex;
 }
-
-.box h2{
-    color: #34bab0;
-    font-size: 28px;
+.num {
+    color: #fff;
+    background-color: transparent;
+    width: 100px;
     text-align: center;
-}
-
-.box textarea{
-    width: 100%;
-    resize: none;
-    height: 59px;
     outline: none;
-    padding: 15px;
-    font-size: 16px;
-    margin-top: 20px;
-    border-radius: 5px;
-    max-height: 1000px;
-    border-color: #34bab0;
+    padding: 2rem 1rem;
+    margin: 0 1rem;
+    font-size: 3rem;
+    border: 1px solid rgba(255, 255, 255, .3);
+    border-radius: .5rem;
+    color: #34bab0;
+}
+.space {
+    width: 3rem;
+}
+.num:focus,
+.num:valid {
+    box-shadow: 0 0 .5rem #34bab0,
+                inset 0 0 .5rem #34bab0;
+    border-color: #6b6b6ba5;
 }
 
-textarea::placeholder{
-    color: #b3b3b3;
-}
-
-textarea:is(:focus, :valid){
-    padding: 14px;
-    border-color: #34bab0;
-}
-
-textarea::-webkit-scrollbar{
-    width: 0px;
-}
+input[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+  }
+  input[type="number"]:hover,
+  input[type="number"]:focus {
+    appearance: number-input;
+    -moz-appearance: number-input;
+  }
