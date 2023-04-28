@@ -16,6 +16,7 @@ body {
     transform: translate(-50%, -50%);
     box-sizing: border-box;
     padding: 50px;
+    border-radius: 10px;
 }
 
 h1 {
