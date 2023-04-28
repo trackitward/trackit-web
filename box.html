@@ -12,13 +12,13 @@
 <body>
     <form action="">
         <div class="container">
-            <input type="number" class="num" maxlength="1" required>
-            <input type="text" class="num" maxlength="1" required>
-            <input type="text" class="num" maxlength="1" required>
+            <input type="text" class="num" maxlength="1" required onkeypress="return /[0-9]/i.test(event.key)" autofocus>
+            <input type="text" class="num" maxlength="1" required onkeypress="return /[0-9]/i.test(event.key)">
+            <input type="text" class="num" maxlength="1" required onkeypress="return /[0-9]/i.test(event.key)">
             <div class="space"></div>
-            <input type="text" class="num" maxlength="1" required>
-            <input type="text" class="num" maxlength="1" required>
-            <input type="text" class="num" maxlength="1" required>
+            <input type="text" class="num" maxlength="1" required onkeypress="return /[0-9]/i.test(event.key)">
+            <input type="text" class="num" maxlength="1" required onkeypress="return /[0-9]/i.test(event.key)">
+            <input type="text" class="num" maxlength="1" required onkeypress="return /[0-9]/i.test(event.key)">
         </div>
     </form>
 </body>
