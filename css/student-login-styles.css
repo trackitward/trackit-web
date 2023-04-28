@@ -75,8 +75,12 @@ h1 {
 
 */
 
+* {
+    font-family: sans-serif;
+}
+
 body {
-    background-color: black;
+    background-color:  #141d26;
 }
 
 .field {
@@ -109,7 +113,7 @@ body {
     background-color: inherit;
     left: 0;
     pointer-events: none;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #34bab0;
 }
 
 .field .label-wrapper::after {
@@ -136,7 +140,7 @@ body {
 .field input:valid + .label-wrapper .label-text {
     transform: translateY(-150%);
     font-size: 12px;
-    color: #ff9950;
+    color: #34bab0;
 }
 
 .field input:focus + .label-wrapper::after,
