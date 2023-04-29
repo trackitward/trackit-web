@@ -11,9 +11,26 @@ body {
     min-height: 100vh;
     background-color: #141d26;
 }
-
 .container {
     display: flex;
+}
+h1 {
+    color: white;
+    display: grid;
+    place-items: center;
+    margin-bottom: 15px;
+    font-size: 45px;
+}
+.container input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 150px;
+    background: #34bab0;
+    color: #fff;
+    font-size: 40px;
+    width: 70px;
+    border-radius: 10px;
+    margin-left: 20px;
 }
 .num {
     color: #fff;
@@ -27,9 +44,6 @@ body {
     border: 1px solid rgba(255, 255, 255, .3);
     border-radius: .5rem;
     color: #34bab0;
-}
-.space {
-    width: 3rem;
 }
 .num:focus,
 .num:valid {
