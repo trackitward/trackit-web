@@ -44,7 +44,10 @@ function runPostJson(){
         code.push(num.value)
     })
 
-    // PUT MODAL CODE HERE
+    // PUT MODAL CODE HERE ???
+    
+    // Make banner (green/red)
+    // Buttons on modal should exit the modal 
     
     PostJSON(code.join('').toString())
 }

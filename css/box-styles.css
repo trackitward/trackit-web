@@ -101,30 +101,28 @@ a:link {
   padding: 4rem 2rem;
   border-radius: .0rem;
   color: hsl(0, 0%, 100%);
-  background: linear-gradient(to right bottom, #009FFF, #ec2F4B);
+  background: #34bab0;
   box-shadow: .4rem .4rem 2.4rem .2rem hsla(236, 50%, 50%, 0.3);
   position: relative;
   overflow: hidden;
+  border-radius: 20px;
 }
 .details {
   text-align: center;
-  margin-bottom: 4rem;
-  padding-bottom: 4rem;
-  border-bottom: 1px solid hsla(0, 0%, 100%, .4);
 }
 .title {
-  font-size: 3.2rem;
-}
-.description {
-  margin-top: 2rem;
-  font-size: 1.6rem;
-  font-style: normal;
+  font-size: 3.4rem;
+  color:#141d26;
+  margin-top: 15px;
+  margin-bottom: 35px;
 }
 .txt {
   padding: 0 4rem;
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
   font-size: 1.6rem;
   line-height: 2;
+  color:#141d26;
+  font-size: 30px;
 }
 .txt::before {
   content: '';
@@ -135,32 +133,54 @@ a:link {
           transform: translate(-50%, -50%);
   width: 18rem;
   height: 18rem;
-  border: 1px solid hsla(0, 0%, 100%, .2);
+  border: 1px solid #141d26;
   border-radius: 100rem;
   pointer-events: none;
 }
-.btn {
-  padding: 1rem 1.6rem;
-  border: 1px solid hsla(0, 0%, 100%, .4);
+.btn-true {
+  padding: 1.2rem 2.2rem;
+  border: 1px solid #141d26;
   border-radius: 100rem;
   color: inherit;
   background: transparent;
-  font-size: 1.4rem;
+  font-size: 2.5rem;
   font-family: inherit;
-  letter-spacing: .2rem;
   transition: .2s;
   cursor: pointer;
+  color:  #141d26;
+  position: absolute;
+  top: 85%;
+  left: 58%;
+  transform: translate(-50%, -50%);
 }
-.btn:hover,
-.btn:focus {
+.btn-false {
+  padding: 1.2rem 2.2rem;
+  border: 1px solid #141d26;
+  border-radius: 100rem;
+  color: inherit;
+  background: transparent;
+  font-size: 2.5rem;
+  font-family: inherit;
+  transition: .2s;
+  cursor: pointer;
+  color:  #141d26;
+  position: absolute;
+  top: 85%;
+  left: 42%;
+  transform: translate(-50%, -50%);
+}
+.btn-true:hover,
+.btn-true:focus {
   border-color: hsla(0, 0%, 100%, .6);
-  -webkit-transform: translateY(-.2rem);
-          transform: translateY(-.2rem);
+}
+.btn-false:hover,
+.btn-false:focus {
+  border-color: hsla(0, 0%, 100%, .6);
 }
 .link-2 {
   width: 4rem;
   height: 4rem;
-  border: 1px solid hsla(0, 0%, 100%, .4);
+  border: 1px solid  #141d26;
   border-radius: 100rem;
   color: inherit;
   font-size: 2.2rem;
@@ -177,6 +197,8 @@ a:link {
   content: '×';
   -webkit-transform: translateY(-.1rem);
           transform: translateY(-.1rem);
+  color: #141d26;
+  margin-top: 6px;
 }
 .link-2:hover,
 .link-2:focus {
