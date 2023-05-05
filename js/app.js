@@ -43,11 +43,6 @@ function runPostJson(){
     nums.forEach((num, index) => {
         code.push(num.value)
     })
-
-    // PUT MODAL CODE HERE ???
-    
-    // Make banner (green/red)
-    // Buttons on modal should exit the modal 
     
     PostJSON(code.join('').toString())
 }
@@ -61,4 +56,25 @@ async function PostJSON(code){
     const result = await response.json()
 
     console.log(result)
+}
+
+function openModal(){
+ // PUT MODAL CODE HERE ???
+
+ text = document.getElementById('user_text')
+
+ student_name = 'christian'
+ course_code = 'MCV4U1'
+ section = 1
+ unit_number = 2
+
+ inline_text = `<b>Name:</b> ${student_name}<br> <b>Course Code:</b> ${course_code}<br> <b>Section:</b> ${section}<br> <b>Unit Number:</b> ${unit_number}`
+
+ text.innerHTML = inline_text
+
+ 
+ // Make banner (green/red)
+ // Buttons on modal should exit the modal 
+ // Buttons should clear code
+ // Enter button on keyboard should open modal
 }

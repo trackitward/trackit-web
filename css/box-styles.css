@@ -206,3 +206,9 @@ a:link {
   -webkit-transform: translateY(-.2rem);
           transform: translateY(-.2rem);
 }
+
+#openModalButton{
+  background: none;
+  outline: none;
+  border: none;
+}
