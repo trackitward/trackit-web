@@ -10,7 +10,7 @@ nums.forEach((num, index) => {
     num.dataset.id = index
     
     num.addEventListener('keydown', function(event) {
-        if (event.keyCode === 13) runPostJson()
+        if (event.keyCode === 13) openModal()
         if (num.value.length == 1 && index+1 != nums.length) {
             nums[parseInt(num.dataset.id) + 1].removeAttribute("readonly")
             nums[parseInt(num.dataset.id) + 1].focus()
@@ -36,6 +36,7 @@ nums.forEach((num, index) => {
 
 submit.addEventListener("submit", (e) => {
     e.preventDefault()
+    openModal()
     runPostJson()
 })
 
@@ -60,6 +61,12 @@ async function PostJSON(code){
 
 function openModal(){
  // PUT MODAL CODE HERE ???
+if (window.location.toString().includes('#modal-closed')){
+    window.location.replace('#modal-closed','#modal-opened')
+    window.location.href = window.location
+} else {
+    window.location.href += '#modal-opened'
+}
 
  text = document.getElementById('user_text')
 
