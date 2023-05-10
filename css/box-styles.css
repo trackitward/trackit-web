@@ -98,6 +98,7 @@ a:link {
 }
 .modal {
   width: 60rem;
+  height: 35rem;
   padding: 4rem 2rem;
   border-radius: .0rem;
   color: hsl(0, 0%, 100%);
@@ -113,12 +114,11 @@ a:link {
 .title {
   font-size: 3.4rem;
   color:#141d26;
-  margin-top: 15px;
-  margin-bottom: 35px;
+  margin-bottom: 5px;
 }
 .txt {
   padding: 0 4rem;
-  margin-bottom: 6rem;
+  margin-bottom: 0.5rem;
   font-size: 1.6rem;
   line-height: 2;
   color:#141d26;
@@ -138,8 +138,15 @@ a:link {
   pointer-events: none;
 }
 .banner {
-  color: rgb(252, 5, 5);
-  height: 200px;
+  background-color: rgb(252, 5, 5);
+  height: 40px;
+  border-radius: 10px;
+}
+.banner p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
 }
 .btn-true {
   padding: 1.2rem 2.2rem;
@@ -153,7 +160,7 @@ a:link {
   cursor: pointer;
   color:  #141d26;
   position: absolute;
-  top: 85%;
+  top: 89%;
   left: 58%;
   transform: translate(-50%, -50%);
 }
@@ -169,7 +176,7 @@ a:link {
   cursor: pointer;
   color:  #141d26;
   position: absolute;
-  top: 85%;
+  top: 89%;
   left: 42%;
   transform: translate(-50%, -50%);
 }
