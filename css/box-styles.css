@@ -137,6 +137,10 @@ a:link {
   border-radius: 100rem;
   pointer-events: none;
 }
+.banner {
+  color: rgb(252, 5, 5);
+  height: 200px;
+}
 .btn-true {
   padding: 1.2rem 2.2rem;
   border: 1px solid #141d26;
