@@ -12,12 +12,21 @@
     <div class="loginbox">
         <h1>Teacher Signup</h1>
         <form>
-            <p>Email</p>
-            <input type="email" name="" placeholder="Enter Email">
-            <p>Password</p>
-            <input type="password" name="" placeholder="Enter Password">
-            <input type="submit" name="" value="Login">
+            <div class="field">
+                <input type="text" name="email" autocomplete="off" required/>
+                <label for="email" class="label-wrapper">
+                    <span class="label-text"> Email </span>
         </form>
-    </div>    
+        </div>  
+        <div class="field">
+            <input type="password" name="password" autocomplete="off" required/>
+            <label for="password" class="label-wrapper">
+                <span class="label-text"> Password </span>
+            </form>
+        </div> 
+        <div class="submit">
+            <input type="submit" name="" value="Sign-up" id="submit" onclick="login()">
+        </div>
+        <script src="js/auth.js"></script>   
 </body>
 </html>

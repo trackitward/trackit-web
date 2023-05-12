@@ -11,15 +11,27 @@
 <body>
     <div class="loginbox">
         <h1>Teacher Login</h1>
-        <form>
-            <p>Email</p>
-            <input type="email" name="" placeholder="Enter Email">
-            <p>Password</p>
-            <input type="password" name="" placeholder="Enter Password">
-            <input type="submit" name="" value="Login">
-            <a href="#">Lost your password?</a><br>
-            <a href="teacher-signup.html">Don't have an account?</a>
+    <form>
+        <div class="field">
+            <input type="text" name="email" autocomplete="off" required/>
+            <label for="email" class="label-wrapper">
+                <span class="label-text"> Email </span>
+    </form>
+    </div>  
+    <div class="field">
+        <input type="password" name="password" autocomplete="off" required/>
+        <label for="password" class="label-wrapper">
+            <span class="label-text"> Password </span>
         </form>
-    </div>    
+    </div> 
+    <div class="submit">
+        <input type="submit" name="" value="Login" id="submit">
+    </div>
+    <div class="links">
+        <a href="#">Lost your password?</a><br>
+        <a href="teacher-signup.html">Don't have an account?</a> 
+    </div>   
 </body>
 </html>
+
+

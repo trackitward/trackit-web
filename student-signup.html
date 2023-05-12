@@ -11,16 +11,29 @@
 <body>
     <div class="loginbox">
         <h1>Student Signup</h1>
-        <form id="submit">
-            <p>Student Number</p>
-            <input type="text" name="" placeholder="Enter student number" maxlength="9">
-            <p>Email</p>
-            <input type="email" name="" placeholder="Enter Email" id="email">
-            <p>Password</p>
-            <input type="password" name="" placeholder="Enter Password">
-            <input type="submit" name="" value="Login" onclick="login()">
+        <form>
+            <div class="field">
+                <input type="text" name="number" autocomplete="off" maxlength="9" required/>
+                <label for="number" class="label-wrapper">
+                    <span class="label-text"> Student Number </span>
         </form>
-    </div>    
-    <script src="js/auth.js"></script>
+        </div>
+        <form>
+            <div class="field">
+                <input type="text" name="email" autocomplete="off" required/>
+                <label for="email" class="label-wrapper">
+                    <span class="label-text"> Email </span>
+        </form>
+        </div>  
+        <div class="field">
+            <input type="password" name="password" autocomplete="off" required/>
+            <label for="password" class="label-wrapper">
+                <span class="label-text"> Password </span>
+            </form>
+        </div> 
+        <div class="submit">
+            <input type="submit" name="" value="Sign-up" id="submit" onclick="login()">
+        </div>
+        <script src="js/auth.js"></script>
 </body>
 </html>
