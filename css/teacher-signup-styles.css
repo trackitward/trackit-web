@@ -33,6 +33,7 @@ h1 {
     max-width: 800px;
     color: white;
     overflow: hidden;
+    margin-bottom: 10px;
 }
 
 .field input {
@@ -46,6 +47,7 @@ h1 {
     padding-top: 25px;
     border: none;
     box-sizing: border-box;
+    font-size: 16px;
 }
 
 .field .label-wrapper {
