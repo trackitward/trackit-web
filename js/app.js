@@ -2,7 +2,7 @@ const nums = document.querySelectorAll('.num')
 const form = document.querySelector('form')
 const submit = document.getElementById('submitForm')
 
-const api_link = "https://5late-improved-space-happiness-4ww59xqx9v9hjj7g-31475.preview.app.github.dev"
+const api_link = "http://localhost:31475"
 
 let code = []
 
@@ -60,7 +60,6 @@ async function PostJSON(code){
 }
 
 function openModal(){
- // PUT MODAL CODE HERE ???
 if (window.location.toString().includes('#modal-closed')){
     window.location.replace('#modal-closed','#modal-opened')
     window.location.href = window.location

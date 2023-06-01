@@ -11,7 +11,7 @@ let fetched = false
 window.onload = getAPI()
 
 function getAPI() {
-    student_num = "138213763"
+    student_num = "777777777"
     if (fetched){return}
     fetch(mainURL+"/get/user/"+student_num+"/all_data").then(response => response.json()).then(data => {
         console.log("this should be first", data)
@@ -25,7 +25,7 @@ function getAPI() {
 
 function fillCourseBox(box){
     getAPI()
-    student_num = "138213763"
+    student_num = "777777777"
     if (current_course <= user_data.data.course_data.length) {
         //console.log(user_data.data.course_data[current_course])
         box.innerHTML = user_data.data.course_data[current_course].user_course.course_info.course_code
@@ -35,16 +35,37 @@ function fillCourseBox(box){
 }
 
 function fillUnitBox(index, box, current_course){
+    box.href = '#modal-opened'
     index -= 1
     current_course -= 1
     getAPI()
-    student_num = "138213763"
+    student_num = "777777777"
     //console.log(current_course, index, user_data.data.course_data[current_course].user_course.user_info.units[index].unit_completed)
     if (user_data.data.course_data[current_course].user_course.user_info.units[index].unit_completed) {
         box.innerHTML = "✔️"
     } else {
         box.innerHTML = "❌"
     }
+}
+
+function openModal() {
+     window.location.href += '#modal-opened'
+     text = document.getElementById('user_text')
+    
+     student_name = 'christian'
+     course_code = 'MCV4U1'
+     section = 1
+     unit_number = 2
+    
+     inline_text = `<b>Name:</b> ${student_name}<br> <b>Course Code:</b> ${course_code}<br> <b>Section:</b> ${section}<br> <b>Unit Number:</b> ${unit_number}`
+    
+     text.innerHTML = inline_text
+    
+     
+     // Make banner (green/red)
+     // Buttons on modal should exit the modal 
+     // Buttons should clear code
+     // Enter button on keyboard should open modal
 }
 
 //let number_of_courses = 8 // get the number of courses, will be from api soon
@@ -70,10 +91,13 @@ function createPage(){
         row.align = 'center' // align the row to the center
         for (var j=0; j<=18; j++){ // for each course, run a loop 18 times for 18 units
             var box = document.createElement('td') // create a box for each unit
+            var boxbutton = document.createElement('a')
+            boxbutton.className = 'link-1'
+            box.appendChild(boxbutton)
             if (j == 0){
-                fillCourseBox(box)
+                fillCourseBox(boxbutton)
             } else {
-                fillUnitBox(j, box, current_course)
+                fillUnitBox(j, boxbutton, current_course)
             }
             row.appendChild(box) // append the box to the row
         }
