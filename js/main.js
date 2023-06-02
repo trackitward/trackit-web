@@ -56,7 +56,7 @@ async function openModal(id) {
      course_matrix_row = id.split('-')[1]
     
      student_name = user_data.data.student_data.student_name
-     student_num = user_data.data.student_data.student_num
+     student_num = user_data.data.student_data.student_number
      section = document.getElementById(`button-${course_matrix_row}-0`).textContent.split('-')[1]
      course_code = document.getElementById(`button-${course_matrix_row}-0`).textContent.split('-')[0]
      unit_number = id.split('-')[2]
