@@ -2,7 +2,7 @@ const nums = document.querySelectorAll('.num')
 const form = document.querySelector('form')
 const submit = document.getElementById('submitForm')
 
-const api_link = "https://5late-improved-space-happiness-4ww59xqx9v9hjj7g-31475.preview.app.github.dev"
+const api_link = "http://localhost:31475"
 
 let code = []
 

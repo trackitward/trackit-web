@@ -1,7 +1,7 @@
 let titles = document.getElementById('titles') // get titles from HTML
 let table = document.getElementById('mainTable') // get table from HTML
 
-const api_link = "https://5late-improved-space-happiness-4ww59xqx9v9hjj7g-31475.preview.app.github.dev"
+const api_link = "http://localhost:31475"
 let current_course = 0;
 let number_of_courses = 5;
 
