@@ -48,23 +48,24 @@ td {
 }
 
 .boxbutton {
-    background: none;
-    outline: none;
-    border: none;
-    width: inherit;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  border-radius: 10%;
+  padding: .5rem;
+  transition: .2s;
+  color: #fff;
 }
-
 
 .link-1 {
     font-size: 1rem;
-    color: hsl(0, 0%, 100%);
     background: none;
     border-radius: 10%;
     padding: .5rem;
     transition: .2s;
 }
-.link-1:hover,
-.link-1:focus {
+.boxbutton:hover,
+.boxbutton:focus {
 -webkit-transform: translateY(-.2rem);
         transform: translateY(-.2rem);
 box-shadow: 0 0 4.4rem .2rem #34bab1;

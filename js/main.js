@@ -1,7 +1,7 @@
 let titles = document.getElementById('titles') // get titles from HTML
 let table = document.getElementById('mainTable') // get table from HTML
 
-let mainURL = 'http://localhost:31475'
+const api_link = "http://localhost:31475"
 let current_course = 0;
 let number_of_courses = 5;
 
@@ -13,7 +13,7 @@ window.onload = getAPI()
 function getAPI() {
     student_num = "777777777"
     if (fetched){return}
-    fetch(mainURL+"/get/user/"+student_num+"/all_data").then(response => response.json()).then(data => {
+    fetch(api_link+"/get/user/"+student_num+"/all_data").then(response => response.json()).then(data => {
         console.log("this should be first", data)
         user_data = data
         if (data.data.course_data.length > 0){
@@ -28,7 +28,7 @@ function fillCourseBox(box){
     student_num = "777777777"
     if (current_course <= user_data.data.course_data.length) {
         //console.log(user_data.data.course_data[current_course])
-        box.innerHTML = user_data.data.course_data[current_course].user_course.course_info.course_code
+        box.innerHTML = user_data.data.course_data[current_course].user_course.course_info.course_code + "-" + user_data.data.course_data[current_course].user_course.user_section.toLocaleString('en-US', {minimumIntegerDigits: 2})
         current_course += 1
     }
     console.log(fetched)
@@ -48,16 +48,24 @@ function fillUnitBox(index, box, current_course){
     }
 }
 
-function openModal() {
-     window.location.href += '#modal-opened'
+async function openModal(id) {
+     window.location.href = '#modal-opened'
      text = document.getElementById('user_text')
+     let code_element = document.getElementById('code')
+
+     course_matrix_row = id.split('-')[1]
     
-     student_name = 'christian'
-     course_code = 'MCV4U1'
-     section = 1
-     unit_number = 2
+     student_name = user_data.data.student_data.student_name
+     student_num = user_data.data.student_data.student_num
+     section = document.getElementById(`button-${course_matrix_row}-0`).textContent.split('-')[1]
+     course_code = document.getElementById(`button-${course_matrix_row}-0`).textContent.split('-')[0]
+     unit_number = id.split('-')[2]
+
+     code = await getCode(student_num, student_name, course_code, section, unit_number)
     
      inline_text = `<b>Name:</b> ${student_name}<br> <b>Course Code:</b> ${course_code}<br> <b>Section:</b> ${section}<br> <b>Unit Number:</b> ${unit_number}`
+
+     code_element.innerText = code
     
      text.innerHTML = inline_text
     
@@ -91,16 +99,55 @@ function createPage(){
         row.align = 'center' // align the row to the center
         for (var j=0; j<=18; j++){ // for each course, run a loop 18 times for 18 units
             var box = document.createElement('td') // create a box for each unit
-            var boxbutton = document.createElement('a')
-            boxbutton.className = 'link-1'
-            box.appendChild(boxbutton)
+            var boxlink = document.createElement('a')
+
+            boxlink.className = 'link-1'
+            boxlink.id = `button-${i}-${j}`
+
+            boxlink.addEventListener("click", function(event){
+                console.log(event.target.id)
+                openModal(event.target.id)
+                event.preventDefault()
+            });
+
+            box.appendChild(boxlink)
+            
             if (j == 0){
-                fillCourseBox(boxbutton)
+                fillCourseBox(boxlink)
             } else {
-                fillUnitBox(j, boxbutton, current_course)
+                fillUnitBox(j, boxlink, current_course)
             }
             row.appendChild(box) // append the box to the row
         }
         table.appendChild(row) // append the row to the table
     }
 }
+
+async function getCode(student_num, student_name, course_code, section, unit_num) {
+    date = new Date()
+    formatted_date = date.getDate() + "-" + date.getMonth() + "+" + date.getFullYear()
+
+    console.log(date)
+
+    data = {
+        'date': date,
+        'student_name': student_name,
+        'student_number': student_num,
+        'course_code': course_code,
+        'student_section': parseInt(section),
+        'unit_number': parseInt(unit_num)
+    }
+
+    const response = await fetch(`${api_link}/post/unit/submit`, {
+        method: "POST",
+        body: JSON.stringify(data, null, 2)
+    })
+
+    const result = await response.json()
+
+    console.log(result)
+
+    return result
+}
+
+document.getElementsByClassName("link-1")
