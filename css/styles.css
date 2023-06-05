@@ -92,11 +92,11 @@ a:link {
 }
 .modal {
   width: 60rem;
-  height: 35rem;
+  height: 30rem;
   padding: 4rem 2rem;
   border-radius: .0rem;
-  color: hsl(0, 0%, 100%);
-  background: #34bab0;
+  color: #ffffff;
+  background: #36a7a2;
   box-shadow: .4rem .4rem 2.4rem .2rem hsla(236, 50%, 50%, 0.3);
   position: relative;
   overflow: hidden;
@@ -217,4 +217,14 @@ a:link {
   background: none;
   outline: none;
   border: none;
+}
+
+#code{
+  font-family: 'Saira Stencil One';
+  color: black;
+  font-size: 7rem;
+  margin-top: 0px;
+  position: relative;
+  bottom: 275px;
+  left: 225px;
 }

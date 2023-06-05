@@ -77,6 +77,7 @@ function openModal(api_data){
  window.location.href = '#modal-opened'
 
  text = document.getElementById('user_text')
+ last_submitted_element = document.getElementById('last_submitted_element')
 
  console.log(api_data)
 
@@ -84,8 +85,11 @@ function openModal(api_data){
  course_code = api_data.course_code
  section = api_data.student_section
  unit_number = api_data.unit_number
+ last_submitted = api_data.last_submitted
 
  inline_text = `<b>Name:</b> ${student_name}<br> <b>Course Code:</b> ${course_code}<br> <b>Section:</b> ${section}<br> <b>Unit Number:</b> ${unit_number}`
+
+ last_submitted_element.innerHTML = `Last Submitted Unit On: ${last_submitted}`
 
  text.innerHTML = inline_text
 
