@@ -59,6 +59,10 @@ async function PostJSONSubmit(code){
     const result = await response.json()
 
     console.log(result)
+
+    if(response.status == 201){
+        location.href = '#modal-closed'
+    }
 }
 
 async function PostJSONConfirm(code){
