@@ -143,6 +143,15 @@ a:link {
   align-items: center;
   font-size: 25px;
 }
+
+.btn-true::before {
+  content: '✓';
+  -webkit-transform: translateY(-.1rem);
+          transform: translateY(-.1rem);
+  color: #141d26;
+  font-size: 45px;
+}
+
 .btn-true {
   padding: 1.2rem 2.2rem;
   border: 1px solid #141d26;
@@ -159,6 +168,15 @@ a:link {
   left: 58%;
   transform: translate(-50%, -50%);
 }
+
+.btn-false::before {
+  content: '✕';
+  -webkit-transform: translateY(-.1rem);
+          transform: translateY(-.1rem);
+  color: #141d26;
+  font-size: 45px;
+}
+
 .btn-false {
   padding: 1.2rem 2.2rem;
   border: 1px solid #141d26;
