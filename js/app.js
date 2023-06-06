@@ -39,6 +39,15 @@ submit.addEventListener("submit", (e) => {
     e.preventDefault()
 })
 
+submit.addEventListener("reset", (e) => {
+    nums.forEach((num, index) => {
+        nums[index].value = ''
+    })
+    location.href = '#modal-closed'
+    nums[0].focus()
+    e.preventDefault()
+})
+
 function runPostJson(confirm_or_submit){
     nums.forEach((num, index) => {
         code.push(num.value)
