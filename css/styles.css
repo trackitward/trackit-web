@@ -69,7 +69,7 @@ td {
 -webkit-transform: translateY(-.2rem);
         transform: translateY(-.2rem);
 box-shadow: 0 0 4.4rem .2rem #34bab1;
-background: #34bab130;
+background: rgba(52, 186, 177, 0.188);
 }
 a,
 a:link {

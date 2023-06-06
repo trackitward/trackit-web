@@ -42,7 +42,7 @@ function fillUnitBox(index, box, current_course){
     student_num = "777777777"
     //console.log(current_course, index, user_data.data.course_data[current_course].user_course.user_info.units[index].unit_completed)
     if (user_data.data.course_data[current_course].user_course.user_info.units[index].unit_completed) {
-        box.innerHTML = "✔️"
+        box.innerHTML = "<img src='images/checkmark.png' alt='' width='20px'>"
         box.style.padding = '0px'
     } else {
         box.innerHTML = "    "
@@ -82,6 +82,29 @@ async function openModal(id) {
      // Buttons should clear code
      // Enter button on keyboard should open modal
 }
+
+let submit = document.getElementById('submit')
+submit.addEventListener("click", (e) => {
+    location.href = '#modal-closed'
+    let checkmarkgif = document.getElementById('checkmark-gif')
+    checkmarkgif.style.display = 'block'
+    checkmarkgif.style.width = '40%'
+    checkmarkgif.style.height = '45%'
+    checkmarkgif.style.zIndex = '100'
+    checkmarkgif.style.marginBottom = '700px'
+    checkmarkgif.style.marginLeft = '415px'
+    document.body.style.overflowY = 'hidden'
+    location.href = '#checkmark2-gif'
+    table.style.display = 'none'
+
+    setTimeout(() => {
+        checkmarkgif.style.display = 'none'
+        table.style.display = 'block'
+        location.reload()
+        }, 1500)
+    
+    e.preventDefault()
+})
 
 //let number_of_courses = 8 // get the number of courses, will be from api soon
 

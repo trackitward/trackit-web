@@ -10,7 +10,7 @@ nums.forEach((num, index) => {
     num.dataset.id = index
     
     num.addEventListener('keydown', function(event) {
-        if (event.keyCode === 13) openModal()
+        if (event.keyCode === 13) runPostJson('confirm')
         if (num.value.length == 1 && index+1 != nums.length) {
             nums[parseInt(num.dataset.id) + 1].removeAttribute("readonly")
             nums[parseInt(num.dataset.id) + 1].focus()
@@ -33,6 +33,9 @@ nums.forEach((num, index) => {
     })
 })
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms))
+}
 
 submit.addEventListener("submit", (e) => {
     runPostJson('submit')
@@ -44,6 +47,7 @@ submit.addEventListener("reset", (e) => {
         nums[index].value = ''
     })
     location.href = '#modal-closed'
+    location.reload()
     nums[0].focus()
     e.preventDefault()
 })
@@ -71,6 +75,26 @@ async function PostJSONSubmit(code){
 
     if(response.status == 201){
         location.href = '#modal-closed'
+        let checkmarkgif = document.getElementById('checkmark-gif')
+        checkmarkgif.style.display = 'block'
+        checkmarkgif.style.width = '70%'
+        checkmarkgif.style.height = '75%'
+        checkmarkgif.style.zIndex = '100'
+        checkmarkgif.style.marginBottom = '200px'
+        document.body.style.overflowY = 'hidden'
+        location.href = '#checkmark-gif'
+        submit.style.display = 'none'
+
+        setTimeout(() => {
+            checkmarkgif.style.display = 'none'
+            submit.style.display = 'block'
+            }, 2500)
+        nums.forEach((num, index) => {
+            nums[index].value = ''
+        })
+        location.href = '#modal-closed'
+        nums[0].focus()
+
     }
 }
 
