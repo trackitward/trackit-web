@@ -43,14 +43,15 @@ function fillUnitBox(index, box, current_course){
     //console.log(current_course, index, user_data.data.course_data[current_course].user_course.user_info.units[index].unit_completed)
     if (user_data.data.course_data[current_course].user_course.user_info.units[index].unit_completed) {
         box.innerHTML = "✔️"
+        box.style.padding = '0px'
     } else {
-        box.innerHTML = ""
+        box.innerHTML = "    "
     }
 }
 
 async function openModal(id) {
-     window.location.href = '#modal-opened'
-     text = document.getElementById('user_text')
+     let element = document.getElementById(id)
+     let text = document.getElementById('user_text')
      let code_element = document.getElementById('code')
 
      course_matrix_row = id.split('-')[1]
@@ -60,6 +61,12 @@ async function openModal(id) {
      section = document.getElementById(`button-${course_matrix_row}-0`).textContent.split('-')[1]
      course_code = document.getElementById(`button-${course_matrix_row}-0`).textContent.split('-')[0]
      unit_number = id.split('-')[2]
+
+     if (unit_number == '0' || element.innerText == '✔️') {
+        return
+     }
+
+     window.location.href = '#modal-opened'
 
      code = await getCode(student_num, student_name, course_code, section, unit_number)
     
