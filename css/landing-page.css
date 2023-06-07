@@ -120,6 +120,8 @@ h1, .h1 {
 
 h2, .h2 {
   font-size: calc(1.325rem + 0.9vw);
+  color: white;
+  text-decoration: underline;
 }
 @media (min-width: 1200px) {
   h2, .h2 {
@@ -1274,7 +1276,8 @@ progress {
   }
   .col-lg-5 {
     flex: 0 0 auto;
-    width: 41.66666667%;
+    width: 50%;
+    margin-top: 50px;
   }
   .col-lg-6 {
     flex: 0 0 auto;
@@ -2835,8 +2838,8 @@ textarea.form-control-lg {
 
 .btn-primary {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #0d6efd;
-  --bs-btn-border-color: #0d6efd;
+  --bs-btn-bg: #34bab0;
+  --bs-btn-border-color: #34bab0;
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: #0b5ed7;
   --bs-btn-hover-border-color: #0a58ca;
@@ -2848,6 +2851,7 @@ textarea.form-control-lg {
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: #0d6efd;
   --bs-btn-disabled-border-color: #0d6efd;
+  font-size: 20px;
 }
 
 .btn-secondary {
@@ -10882,6 +10886,11 @@ header.masthead h1, header.masthead .h1 {
 .testimonials .testimonial-item img {
   max-width: 12rem;
   box-shadow: 0px 5px 5px 0px #adb5bd;
+}
+
+.founders {
+  position: relative;
+  left: 106%;
 }
 
 .call-to-action {
