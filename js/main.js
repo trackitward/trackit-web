@@ -1,5 +1,6 @@
 let titles = document.getElementById('titles') // get titles from HTML
 let table = document.getElementById('mainTable') // get table from HTML
+const state = localStorage.getItem('logged-in')
 
 const api_link = "http://localhost:31475"
 let current_course = 0;
@@ -8,7 +9,13 @@ let number_of_courses = 5;
 var user_data = {}
 let fetched = false
 
-window.onload = getAPI()
+window.onload = function () {
+    if (state != 'True') {
+        location.href = '/student-login.html'
+        return
+    }
+    getAPI()
+}
 
 function getAPI() {
     student_num = "777777777"
