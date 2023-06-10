@@ -1,5 +1,21 @@
 let api_link = 'http://localhost:31475'
 const popup = document.querySelector(".popup");
+const popup_icon = document.getElementById("popup-icon")
+const popup_text = document.getElementById("popup-text")
+const state = localStorage.getItem('logged-in')
+
+window.onload = function() {
+    if (state == 'True'){
+        popup.style.display = "flex"
+        popup.style.left = "3vw"
+        popup.style.backgroundColor = "#009933"
+        popup_icon.src = "https://upload.wikimedia.org/wikipedia/commons/3/3b/Eo_circle_green_checkmark.svg"
+        popup_text.innerHTML = 'Logging in...'
+        setTimeout(() => {
+            location.href = '/index.html'
+        }, 1500)
+    }
+}
 
 async function attepmtLogin(){
     let student_num_elem = document.getElementById('student-num')
@@ -16,10 +32,11 @@ async function attepmtLogin(){
     })
 
     if (response.status == 202) {
+        localStorage.setItem('logged-in', 'True')
         location.href = '/index.html'
     } else {
         popup.style.display = "flex"
-        popup.style.left = "2vw";
+        popup.style.left = "0.5vw";
         setTimeout(() => {
           popup.style.left = "-100vw";
         }, 3000);
