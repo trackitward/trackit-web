@@ -1,6 +1,7 @@
 let titles = document.getElementById('titles') // get titles from HTML
 let table = document.getElementById('mainTable') // get table from HTML
 const state = localStorage.getItem('logged-in')
+const student_num = localStorage.getItem('student-number')
 
 const api_link = "http://localhost:31475"
 let current_course = 0;
@@ -18,7 +19,6 @@ window.onload = function () {
 }
 
 function getAPI() {
-    student_num = "777777777"
     if (fetched){return}
     fetch(api_link+"/get/user/"+student_num+"/all_data").then(response => response.json()).then(data => {
         console.log("this should be first", data)
@@ -32,7 +32,6 @@ function getAPI() {
 
 function fillCourseBox(box){
     getAPI()
-    student_num = "777777777"
     if (current_course <= user_data.data.course_data.length) {
         //console.log(user_data.data.course_data[current_course])
         box.innerHTML = user_data.data.course_data[current_course].user_course.course_info.course_code + "-" + user_data.data.course_data[current_course].user_course.user_section.toLocaleString('en-US', {minimumIntegerDigits: 2})
@@ -46,7 +45,6 @@ function fillUnitBox(index, box, current_course){
     index -= 1
     current_course -= 1
     getAPI()
-    student_num = "777777777"
     //console.log(current_course, index, user_data.data.course_data[current_course].user_course.user_info.units[index].unit_completed)
     if (user_data.data.course_data[current_course].user_course.user_info.units[index].unit_completed) {
         box.innerHTML = "<img src='images/checkmark.png' alt='' width='20px'>"

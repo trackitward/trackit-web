@@ -33,6 +33,7 @@ async function attepmtLogin(){
 
     if (response.status == 202) {
         localStorage.setItem('logged-in', 'True')
+        localStorage.setItem('student-number', student_num_elem.value)
         location.href = '/index.html'
     } else {
         popup.style.display = "flex"
